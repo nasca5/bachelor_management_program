@@ -24,7 +24,8 @@ int main()
     case 1:
       printf("\n");
       register_info(fp, filename);
-      break;
+      fclose(fp);
+      return 0;
     case 2:
       printf("\n");
       print(fp, filename);

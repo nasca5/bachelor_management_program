@@ -1,6 +1,6 @@
 #include "bachelor_info.h"
 
-int print_all_info(FILE* fp, const char* filename)
+int print_all_info(FILE *fp, const char *filename)
 {
   BACHELOR temp;
 
@@ -19,11 +19,10 @@ int print_all_info(FILE* fp, const char* filename)
     }
   }
 
-  fclose(fp);
   return 0;
 }
 
-int print_by_major(FILE* fp, const char* filename)
+int print_by_major(FILE *fp, const char *filename)
 {
   BACHELOR temp;
   char major[20];
@@ -46,11 +45,10 @@ int print_by_major(FILE* fp, const char* filename)
     }
   }
 
-  fclose(fp);
   return 0;
 }
 
-void print(FILE* fp, const char* filename)
+void print(FILE *fp, const char *filename)
 {
   int choose;
 
@@ -74,6 +72,4 @@ void print(FILE* fp, const char* filename)
     printf("choose in 1~6\n");
     break;
   }
-
-  fclose(fp);
 }

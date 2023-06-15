@@ -1,6 +1,6 @@
 #include "bachelor_info.h"
 
-int modify_info(BACHELOR *temp, FILE* fp, const char* filename)
+int modify_info(BACHELOR *temp, FILE *fp, const char *filename)
 {
   int play = 1;
   int choose;
@@ -88,11 +88,10 @@ int modify_info(BACHELOR *temp, FILE* fp, const char* filename)
   fseek(fp, (temp->id - START_ID) * sizeof(BACHELOR), SEEK_SET);
   fwrite(temp, sizeof(BACHELOR), 1, fp);
 
-  fclose(fp);
   return 0;
 }
 
-int remove_info(FILE* fp, const char* filename)
+int remove_info(FILE *fp, const char *filename)
 {
   BACHELOR temp = {0};
   int id;
@@ -109,11 +108,10 @@ int remove_info(FILE* fp, const char* filename)
   fseek(fp, (id - START_ID) * sizeof(BACHELOR), SEEK_SET);
   fwrite(&temp, sizeof(BACHELOR), 1, fp);
 
-  fclose(fp);
   return 0;
 }
 
-void search_info(FILE* fp, const char* filename)
+void search_info(FILE *fp, const char *filename)
 {
   int choose;
 
@@ -149,7 +147,7 @@ void search_info(FILE* fp, const char* filename)
   }
 }
 
-int search_by_id(FILE* fp, const char* filename)
+int search_by_id(FILE *fp, const char *filename)
 {
   BACHELOR temp;
   int id;
@@ -185,11 +183,10 @@ int search_by_id(FILE* fp, const char* filename)
     }
   }
 
-  fclose(fp);
   return 0;
 }
 
-int search_by_name(FILE* fp, const char* filename)
+int search_by_name(FILE *fp, const char *filename)
 {
   BACHELOR temp;
   char name[20];
@@ -225,11 +222,10 @@ int search_by_name(FILE* fp, const char* filename)
     }
   }
 
-  fclose(fp);
   return 0;
 }
 
-int search_by_phone(FILE* fp, const char* filename)
+int search_by_phone(FILE *fp, const char *filename)
 {
   BACHELOR temp;
   char phone[20];
@@ -265,11 +261,10 @@ int search_by_phone(FILE* fp, const char* filename)
     }
   }
 
-  fclose(fp);
   return 0;
 }
 
-int search_by_email(FILE* fp, const char* filename)
+int search_by_email(FILE *fp, const char *filename)
 {
   BACHELOR temp;
   char email[20];
@@ -305,6 +300,5 @@ int search_by_email(FILE* fp, const char* filename)
     }
   }
 
-  fclose(fp);
   return 0;
 }
